@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "odd-cli"
+version = "0.1.0"
+description = ""
+authors = ["Pavel Mackarichev <vixtir90@gmail.com>"]
+readme = "README.md"
+packages = [{include = "odd_cli"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+typer = {extras = ["all"], version = "^0.7.0"}
+odd-models = "^2.0.10"
+oddrn-generator = "^0.1.60"
+pyarrow = "^10.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = {extras = ["d"], version = "^22.12.0"}
+isort = "^5.11.4"
+pytest = "^7.2.1"
+mock = "^5.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+odd = "odd_cli.main:app"
+
+[tool.isort]
+profile = "black"

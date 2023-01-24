@@ -1,0 +1,17 @@
+from odd_models.models import DataEntity, DataEntityType, DataSet
+from oddrn_generator.generators import FilesystemGenerator
+
+from odd_cli.reader.mapper.field import map_field
+from odd_cli.reader.models.table import Table
+
+
+def map_table(table: Table, generator: FilesystemGenerator) -> DataEntity:
+    oddrn = generator.get_oddrn_by_path("path", table.path)
+    fields = [map_field(field, generator) for field in table.fields]
+
+    return DataEntity(
+        oddrn=oddrn,
+        name=table.name,
+        type=DataEntityType.TABLE,
+        dataset=DataSet(field_list=fields, rows_number=table.rows_number),
+    )
