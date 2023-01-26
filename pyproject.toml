@@ -10,8 +10,9 @@ packages = [{include = "odd_cli"}]
 python = "^3.9"
 typer = {extras = ["all"], version = "^0.7.0"}
 odd-models = "^2.0.10"
-oddrn-generator = "^0.1.60"
+oddrn-generator = "0.1.62"
 pyarrow = "^10.0.1"
+tqdm = "^4.64.1"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -6,11 +6,11 @@ from odd_cli.reader.models.table import Table
 
 
 def map_table(table: Table, generator: FilesystemGenerator) -> DataEntity:
-    oddrn = generator.get_oddrn_by_path("path", table.path)
+    generator.set_oddrn_paths(path=table.path)
     fields = [map_field(field, generator) for field in table.fields]
 
     return DataEntity(
-        oddrn=oddrn,
+        oddrn=generator.get_oddrn_by_path("path"),
         name=table.name,
         type=DataEntityType.TABLE,
         dataset=DataSet(field_list=fields, rows_number=table.rows_number),

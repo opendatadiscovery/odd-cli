@@ -21,10 +21,10 @@ def map_type(field_type: FieldType) -> Type:
 
 def map_field(field: Field, generator: FilesystemGenerator) -> DataSetField:
     name = field.name
-    oddrn = generator.get_oddrn_by_path("fields", name)
+    generator.set_oddrn_paths(fields=name)
 
     return DataSetField(
-        oddrn=oddrn,
+        oddrn=generator.get_oddrn_by_path("fields"),
         name=field.name,
         type=DataSetFieldType(type=map_type(field.type), is_nullable=field.nullable),
     )

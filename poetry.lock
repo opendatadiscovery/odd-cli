@@ -573,14 +573,14 @@ sqlparse = "0.4.2"
 
 [[package]]
 name = "oddrn-generator"
-version = "0.1.60"
+version = "0.1.62"
 description = "Open Data Discovery Resource Name Generator"
 category = "main"
 optional = false
 python-versions = ">=3.7,<4.0"
 files = [
-    {file = "oddrn_generator-0.1.60-py3-none-any.whl", hash = "sha256:e3ffef2c37c21220dfb7f7247c9dc8103f54ef03d4c16d09083b43ee9f9569c6"},
-    {file = "oddrn_generator-0.1.60.tar.gz", hash = "sha256:98aeeb586113b5e2d9b7819e47e1ab7092df6317a0aa0614b375b5d1e0c12cc1"},
+    {file = "oddrn_generator-0.1.62-py3-none-any.whl", hash = "sha256:772faa68441eab6626ba812f9c7b22ae02ef871d1a6ab1ab7a655d6119559974"},
+    {file = "oddrn_generator-0.1.62.tar.gz", hash = "sha256:61dff17a739033a93417f06f0f1108e59e8509fbe4b3ee710e36afc8c6fa35d9"},
 ]
 
 [package.dependencies]
@@ -851,6 +851,27 @@ files = [
 ]
 
 [[package]]
+name = "tqdm"
+version = "4.64.1"
+description = "Fast, Extensible Progress Meter"
+category = "main"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
+files = [
+    {file = "tqdm-4.64.1-py2.py3-none-any.whl", hash = "sha256:6fee160d6ffcd1b1c68c65f14c829c22832bc401726335ce92c52d395944a6a1"},
+    {file = "tqdm-4.64.1.tar.gz", hash = "sha256:5f4f682a004951c1b450bc753c710e9280c5746ce6ffedee253ddbcbf54cf1e4"},
+]
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+dev = ["py-make (>=0.1.0)", "twine", "wheel"]
+notebook = ["ipywidgets (>=6)"]
+slack = ["slack-sdk"]
+telegram = ["requests"]
+
+[[package]]
 name = "typer"
 version = "0.7.0"
 description = "Typer, build great CLIs. Easy to code. Based on Python type hints."
@@ -994,4 +1015,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "34e803fd52baeaf5229e1a320daa1c5546449275258d967f946d8fc9bcdbf172"
+content-hash = "1c7df1acb608e62deda9b8f261550ecb99f1c03507a9af0db9a4e02335815221"

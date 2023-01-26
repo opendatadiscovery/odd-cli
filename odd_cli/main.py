@@ -18,11 +18,12 @@ def collect(
     ),
 ):
     client = Client(host=platform_host, token=platform_token)
-    generator = FilesystemGenerator()
+    generator = FilesystemGenerator(host_settings="local")
 
     client.ingest_data_source(generator.get_data_source_oddrn())
+    
+    data_entities = read(path=folder, generator=generator)
 
-    data_entities = read(folder)
     client.ingest_data_entities(data_entities)
 
 
