@@ -5,8 +5,11 @@ from oddrn_generator.generators import FilesystemGenerator
 
 from odd_cli.client import Client
 from odd_cli.reader.reader import read
+from odd_cli.tokens import app as tokens_app
+from loguru import logger
 
 app = typer.Typer()
+app.add_typer(tokens_app, name="tokens")
 
 
 @app.command()
@@ -17,14 +20,17 @@ def collect(
         ..., "--token", "-t", envvar="ODD_PLATFORM_TOKEN"
     ),
 ):
-    client = Client(host=platform_host, token=platform_token)
+    client = Client(host=platform_host)
+
     generator = FilesystemGenerator(host_settings="local")
 
-    client.ingest_data_source(generator.get_data_source_oddrn())
-    
+    client.ingest_data_source(generator.get_data_source_oddrn(), platform_token)
+
     data_entities = read(path=folder, generator=generator)
 
-    client.ingest_data_entities(data_entities)
+    client.ingest_data_entities(data_entities, platform_token)
+
+    logger.success(f"Ingested {len(data_entities.items)} datasets")
 
 
 @app.callback()
