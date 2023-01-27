@@ -592,14 +592,14 @@ sqlparse = "0.4.2"
 
 [[package]]
 name = "oddrn-generator"
-version = "0.1.62"
+version = "0.1.66"
 description = "Open Data Discovery Resource Name Generator"
 category = "main"
 optional = false
 python-versions = ">=3.7,<4.0"
 files = [
-    {file = "oddrn_generator-0.1.62-py3-none-any.whl", hash = "sha256:772faa68441eab6626ba812f9c7b22ae02ef871d1a6ab1ab7a655d6119559974"},
-    {file = "oddrn_generator-0.1.62.tar.gz", hash = "sha256:61dff17a739033a93417f06f0f1108e59e8509fbe4b3ee710e36afc8c6fa35d9"},
+    {file = "oddrn_generator-0.1.66-py3-none-any.whl", hash = "sha256:a3ae90e8a53e6bd217db2b67cdcf0d9044d389d96d5d7ac77e24b49828ecb600"},
+    {file = "oddrn_generator-0.1.66.tar.gz", hash = "sha256:eb35ce92ed5fd0ce07d0cdd080932fbca0d72abe0d98b81d159d71d175fac42e"},
 ]
 
 [package.dependencies]
@@ -619,14 +619,14 @@ files = [
 
 [[package]]
 name = "pathspec"
-version = "0.10.3"
+version = "0.11.0"
 description = "Utility library for gitignore style pattern matching of file paths."
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pathspec-0.10.3-py3-none-any.whl", hash = "sha256:3c95343af8b756205e2aba76e843ba9520a24dd84f68c22b9f93251507509dd6"},
-    {file = "pathspec-0.10.3.tar.gz", hash = "sha256:56200de4077d9d0791465aa9095a01d421861e405b5096955051deefd697d6f6"},
+    {file = "pathspec-0.11.0-py3-none-any.whl", hash = "sha256:3a66eb970cbac598f9e5ccb5b2cf58930cd8e3ed86d393d541eaf2d8b1705229"},
+    {file = "pathspec-0.11.0.tar.gz", hash = "sha256:64d338d4e0914e91c1792321e6907b5a593f1ab1851de7fc269557a21b30ebbc"},
 ]
 
 [[package]]
@@ -1049,4 +1049,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "9178ff38d727aa6c7e3d8ba794c9a46ba83b598e8f027582cf265bd97533c7f6"
+content-hash = "003ed1430daee56c2255a2ba5f55e16f6be3d15d9388a4e40a6192e809520780"

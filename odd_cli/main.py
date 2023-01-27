@@ -9,7 +9,10 @@ from odd_cli.tokens import app as tokens_app
 from loguru import logger
 
 app = typer.Typer()
-app.add_typer(tokens_app, name="tokens")
+app.add_typer(
+    tokens_app,
+    name="tokens",
+)
 
 
 @app.command()
@@ -20,6 +23,7 @@ def collect(
         ..., "--token", "-t", envvar="ODD_PLATFORM_TOKEN"
     ),
 ):
+    "Collect and ingest metadata for local files from folder"
     client = Client(host=platform_host)
 
     generator = FilesystemGenerator(host_settings="local")

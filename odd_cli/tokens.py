@@ -4,7 +4,8 @@ from requests import HTTPError
 
 from odd_cli.client import Client
 
-app = typer.Typer()
+
+app = typer.Typer(short_help="Manipulate OpenDataDiscovery platform's tokens")
 
 
 @app.command()

@@ -1,8 +1,9 @@
 [tool.poetry]
 name = "odd-cli"
 version = "0.1.0"
-description = ""
+description = "Command line tool for working with OpenDataDiscovery. "
 authors = ["Pavel Mackarichev <vixtir90@gmail.com>"]
+keywords=["Open Data Discovery", "Metadata", "Data Discovery", "Data Observability"]
 readme = "README.md"
 
 packages = [{include = "odd_cli"}]
@@ -11,7 +12,7 @@ packages = [{include = "odd_cli"}]
 python = "^3.9"
 typer = {extras = ["all"], version = "^0.7.0"}
 odd-models = "^2.0.10"
-oddrn-generator = "0.1.62"
+oddrn-generator = "^0.1.62"
 pyarrow = "^10.0.1"
 tqdm = "^4.64.1"
 loguru = "^0.6.0"
