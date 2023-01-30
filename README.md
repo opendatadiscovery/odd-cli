@@ -1,4 +1,5 @@
 ## OpenDataDiscovery CLI
+[![PyPI version](https://badge.fury.io/py/odd-cli.svg)](https://badge.fury.io/py/odd-cli)
 
 Command line tool for working with OpenDataDiscovery. 
 It makes it easy to create token though console and ingest local dataset's metadata to OpenDataDiscovery platform.
