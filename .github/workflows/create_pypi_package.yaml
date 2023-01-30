@@ -43,6 +43,6 @@ jobs:
           if [ -n "$(git status --porcelain)" ]
           then
             git add .
-            git commit -m "Bump package version"
+            git commit -m "chore: bump package version"
             git push origin main
           fi
