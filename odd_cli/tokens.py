@@ -1,9 +1,8 @@
-from odd_cli.error import CreateTokenError
 import typer
 from requests import HTTPError
 
 from odd_cli.client import Client
-
+from odd_cli.error import CreateTokenError
 
 app = typer.Typer(short_help="Manipulate OpenDataDiscovery platform's tokens")
 
@@ -17,6 +16,7 @@ def create(
     client = Client(platform_host)
     try:
         token = client.create_token(name, description)
+        print(f"Token: {token}")
         return token
     except HTTPError as e:
         message = e.response.json().get("message")
