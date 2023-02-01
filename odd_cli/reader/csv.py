@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import List
 
 import pyarrow as pa
+from loguru import logger
 from pyarrow import csv
 from pyarrow.types import (
     is_boolean,
@@ -31,7 +32,11 @@ class PyarrowTable(Table):
         table: pa.Table = csv.read_csv(path)
 
         self.name = name
-        self.path = Path.resolve(path).as_posix()
+        self.path = Path.resolve(path)
+
+        logger.debug(f"Path {path}")
+        logger.debug(f"Resolved path: {self.path}")
+
         self.metadata = {}
         self.rows_number = table.num_rows
         self.fields = self._get_fields(table)

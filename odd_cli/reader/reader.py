@@ -23,7 +23,9 @@ def read(
         raise ValueError(f"Path {path.resolve()} doesn't exist")
 
     data_source_oddrn = generator.get_data_source_oddrn()
-    tables = (read_file(path) for path in tqdm(path.rglob(pattern), desc="Reading files"))
+    tables = (
+        read_file(path) for path in tqdm(path.rglob(pattern), desc="Reading files")
+    )
     data_entities = [map_table(table, generator) for table in tables]
 
     return DataEntityList(data_source_oddrn=data_source_oddrn, items=data_entities)
