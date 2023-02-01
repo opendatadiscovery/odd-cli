@@ -32,7 +32,7 @@ class PyarrowTable(Table):
         table: pa.Table = csv.read_csv(path)
 
         self.name = name
-        self.path = Path.resolve(path)
+        self.path = str(Path.resolve(path))
 
         logger.debug(f"Path {path}")
         logger.debug(f"Resolved path: {self.path}")
