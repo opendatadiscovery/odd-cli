@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import List
 
 import pyarrow as pa
-from loguru import logger
+from odd_cli.logger import logger
 from pyarrow import csv
 from pyarrow.types import (
     is_boolean,

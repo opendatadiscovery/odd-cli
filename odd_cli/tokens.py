@@ -3,6 +3,7 @@ from requests import HTTPError
 from rich.console import Console
 
 from odd_cli.client import Client
+from logger import logger
 
 app = typer.Typer(short_help="Manipulate OpenDataDiscovery platform's tokens")
 err_console = Console(stderr=True)
@@ -21,7 +22,7 @@ def create(
         return token
     except HTTPError as e:
         message = e.response.json().get("message")
-        err_console.print(message or "Could not create token.{e}", style="red")
+        logger.error(message or "Could not create token.{e}")
 
 
 if __name__ == "__main__":
