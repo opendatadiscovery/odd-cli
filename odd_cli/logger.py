@@ -4,7 +4,7 @@ import sys
 import loguru
 
 
-def _create_logger(level: str = None):
+def _create_logger(level: str = "INFO"):
     log_level = os.getenv("LOGLEVEL", level)
     root_logger = loguru.logger
 
