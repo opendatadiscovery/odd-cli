@@ -36,7 +36,7 @@ def test(
     try:
         # Execute dbt in external process
         process = subprocess.Popen(
-            ["dbt", "test"],
+            ["dbt", "test", "--project-dir", project_dir],
             stdout=sys.stdout,
             stderr=sys.stderr
         )
