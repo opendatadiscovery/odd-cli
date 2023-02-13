@@ -23,6 +23,14 @@ def test(
         platform_token: str = typer.Option(..., "--token", "-t", envvar="ODD_PLATFORM_TOKEN"),
         dbt_host: str = typer.Option("localhost", "--dbt-host"),
 ):
+    # Execute dbt in external process
+    process = subprocess.Popen(
+        ["dbt", "test", "--project-dir", project_dir],
+        stdout=sys.stdout,
+        stderr=sys.stderr
+    )
+    process.wait()
+
     client = Client(host=platform_host)
     generator = DbtGenerator(host_settings=dbt_host)
     client.ingest_data_source(generator.get_data_source_oddrn(), platform_token)
@@ -32,17 +40,6 @@ def test(
         project_dir=project_dir,
         profile_name=profile_name,
     )
-
-    try:
-        # Execute dbt in external process
-        process = subprocess.Popen(
-            ["dbt", "test", "--project-dir", project_dir],
-            stdout=sys.stdout,
-            stderr=sys.stderr
-        )
-        process.wait()
-    except Exception as e:
-        logger.error(e)
 
     data_entities = ODDAction(parser).run()
     client.ingest_data_entities(data_entities, platform_token)
