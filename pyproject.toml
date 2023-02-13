@@ -13,6 +13,7 @@ python = "^3.9"
 typer = {extras = ["all"], version = "^0.7.0"}
 odd-models = "^2.0.10"
 oddrn-generator = "^0.1.62"
+odd-dbt = "^0.1.1"
 pyarrow = "^10.0.1"
 tqdm = "^4.64.1"
 loguru = "^0.6.0"
