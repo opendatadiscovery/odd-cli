@@ -13,6 +13,7 @@ It makes it easy to create token though console and ingest local dataset's metad
 ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ╭─ Commands ─────────────────────────────────────────────────────────────────────────────────╮
 │ collect                       Collect and ingest metadata for local files from folder      │
+│ dbt                           Run dbt tests and inject results to ODD platform             │
 │ tokens                        Manipulate OpenDataDiscovery platform's tokens               │
 ╰────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
