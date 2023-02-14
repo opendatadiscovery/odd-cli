@@ -44,7 +44,7 @@ def test(
     data_entities = ODDAction(parser).run()
     client.ingest_data_entities(data_entities, platform_token)
 
-    logger.success(f"Ingested {len(data_entities.items)} entities")
+    logger.success(f"Ingested {len(data_entities.items)//2} entities")
 
 
 if __name__ == "__main__":
