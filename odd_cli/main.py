@@ -4,9 +4,9 @@ import typer
 from oddrn_generator.generators import FilesystemGenerator
 
 from odd_cli.client import Client
+from odd_cli.logger import logger
 from odd_cli.reader.reader import read
 from odd_cli.tokens import app as tokens_app
-from logger import logger
 
 app = typer.Typer()
 app.add_typer(
