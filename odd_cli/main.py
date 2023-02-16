@@ -24,15 +24,18 @@ def collect(
     ),
 ):
     "Collect and ingest metadata for local files from folder"
-    client = Client(host=platform_host)
+    client = Client(host=platform_host, token=platform_token)
 
     generator = FilesystemGenerator(host_settings="local")
 
-    client.ingest_data_source(generator.get_data_source_oddrn(), platform_token)
+    client.create_data_source(
+        data_source_oddrn=generator.get_data_source_oddrn(),
+        data_source_name="local_files",
+    )
 
     data_entities = read(path=folder, generator=generator)
 
-    client.ingest_data_entities(data_entities, platform_token)
+    client.ingest_data_entity_list(data_entities=data_entities)
 
     logger.success(f"Ingested {len(data_entities.items)} datasets")
 
