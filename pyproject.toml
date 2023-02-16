@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "odd-cli"
-version = "0.1.8"
-description = "Command line tool for working with OpenDataDiscovery."
+version = "0.1.9"
+description = "Command line tool for working with OpenDataDiscovery. "
 authors = ["Pavel Makarichev <vixtir90@gmail.com>"]
 keywords=["Open Data Discovery", "Metadata", "Data Discovery", "Data Observability"]
 readme = "README.md"
