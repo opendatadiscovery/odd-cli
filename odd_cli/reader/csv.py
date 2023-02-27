@@ -3,7 +3,6 @@ from pathlib import Path
 from typing import List
 
 import pyarrow as pa
-from odd_cli.logger import logger
 from pyarrow import csv
 from pyarrow.types import (
     is_boolean,
@@ -14,6 +13,7 @@ from pyarrow.types import (
     is_string,
 )
 
+from odd_cli.logger import logger
 from odd_cli.reader.models.field import Field, FieldType
 from odd_cli.reader.models.table import Table
 

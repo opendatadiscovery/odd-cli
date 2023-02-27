@@ -1,14 +1,14 @@
 import subprocess
 import sys
-import typer
 
-from oddrn_generator import DbtGenerator
-from odd_cli.logger import logger
+import typer
 from odd_dbt.action import ODDAction
 from odd_dbt.parser import DbtArtifactParser
+from oddrn_generator import DbtGenerator
+from rich.console import Console
 
 from odd_cli.client import Client
-from rich.console import Console
+from odd_cli.logger import logger
 
 app = typer.Typer(short_help="Run dbt tests and inject results to ODD platform")
 err_console = Console(stderr=True)
@@ -16,18 +16,20 @@ err_console = Console(stderr=True)
 
 @app.command()
 def test(
-        project_dir: str = './',
-        target: str = typer.Option(None, "--target", "-t"),
-        profile_name: str = typer.Option(None, '--profile'),
-        platform_host: str = typer.Option(..., "--host", "-h", envvar="ODD_PLATFORM_HOST"),
-        platform_token: str = typer.Option(..., "--token", "-t", envvar="ODD_PLATFORM_TOKEN"),
-        dbt_host: str = typer.Option("localhost", "--dbt-host"),
+    project_dir: str = "./",
+    target: str = typer.Option(None, "--target", "-t"),
+    profile_name: str = typer.Option(None, "--profile"),
+    platform_host: str = typer.Option(..., "--host", "-h", envvar="ODD_PLATFORM_HOST"),
+    platform_token: str = typer.Option(
+        ..., "--token", "-t", envvar="ODD_PLATFORM_TOKEN"
+    ),
+    dbt_host: str = typer.Option("localhost", "--dbt-host"),
 ):
     # Execute dbt in external process
     process = subprocess.Popen(
         ["dbt", "test", "--project-dir", project_dir],
         stdout=sys.stdout,
-        stderr=sys.stderr
+        stderr=sys.stderr,
     )
     process.wait()
 
