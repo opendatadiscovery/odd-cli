@@ -11,9 +11,9 @@ packages = [{include = "odd_cli"}]
 [tool.poetry.dependencies]
 python = "^3.9"
 typer = {extras = ["all"], version = "^0.7.0"}
-odd-models = "^2.0.16"
-oddrn-generator = "^0.1.62"
-odd-dbt = "^0.1.3"
+odd-models = "^2.0.23"
+oddrn-generator = "^0.1.70"
+odd-dbt = "^0.1.5"
 pyarrow = "^10.0.1"
 tqdm = "^4.64.1"
 loguru = "^0.6.0"

@@ -1,10 +1,10 @@
 from pathlib import Path
 
 import typer
+from odd_dbt.app import app as dbt_test_app
 from oddrn_generator.generators import FilesystemGenerator
 
 from odd_cli.client import Client
-from odd_cli.dbt import app as dbt_test_app
 from odd_cli.logger import logger
 from odd_cli.reader.reader import read
 from odd_cli.tokens import app as tokens_app
