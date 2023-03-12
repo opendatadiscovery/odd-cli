@@ -1626,14 +1626,14 @@ files = [
 
 [[package]]
 name = "odd-dbt"
-version = "0.1.5"
+version = "0.1.6"
 description = "OpenDataDiscovery Action for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "odd_dbt-0.1.5-py3-none-any.whl", hash = "sha256:8842dfa25d3b36869cd51907efae224293f7d84a80ab10f588c8639cb014df89"},
-    {file = "odd_dbt-0.1.5.tar.gz", hash = "sha256:632d2ac918f0d33386e6b9e0e53725bc49096c3b2325ed61f86b54b2855759b3"},
+    {file = "odd_dbt-0.1.6-py3-none-any.whl", hash = "sha256:a29c8aac8b83c22a6e5e5b38bae5734afbf6f02ef122abdb6a1c2f1345e7db69"},
+    {file = "odd_dbt-0.1.6.tar.gz", hash = "sha256:71a42854f1452da67636503d0f158f8d8303b068bd6087e7a8370f56341a9a33"},
 ]
 
 [package.dependencies]
@@ -2794,4 +2794,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "0da97594f4a2f743ac1da842372deae9a1540f8b9d5c79d010937c5a764c8b44"
+content-hash = "48b8942fcbd28bb8ddcdc1b075f2774618e5675bae06e7b69427d93b6758b096"
