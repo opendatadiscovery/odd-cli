@@ -646,14 +646,14 @@ test = ["hypothesis (>=1.11.4,!=3.79.2)", "iso8601", "pretend", "pytest (>=6.0)"
 
 [[package]]
 name = "dbt-core"
-version = "1.4.4"
+version = "1.4.1"
 description = "With dbt, data analysts and engineers can build analytics the way engineers build applications."
 category = "main"
 optional = false
 python-versions = ">=3.7.2"
 files = [
-    {file = "dbt-core-1.4.4.tar.gz", hash = "sha256:7bc228013772322d3aaf8e06506a53c21b20e85f6db272b1bd6b055e85608842"},
-    {file = "dbt_core-1.4.4-py3-none-any.whl", hash = "sha256:278ddc90f85fd5c0508194b7ac7b194cc7d98b4d66c92de0ca531f6ad44dc16b"},
+    {file = "dbt-core-1.4.1.tar.gz", hash = "sha256:ef67fd94260cb6a9d293ef8923fb39965687844d0b6937e5eabd9378d7611cf3"},
+    {file = "dbt_core-1.4.1-py3-none-any.whl", hash = "sha256:40fbc42484accb75bb59dd8cabb018da4f3a022f08cfa4f490a0c8759b25a9d9"},
 ]
 
 [package.dependencies]
@@ -671,9 +671,8 @@ logbook = ">=1.5,<1.6"
 mashumaro = {version = "3.3.1", extras = ["msgpack"]}
 minimal-snowplow-tracker = "0.0.2"
 networkx = {version = ">=2.3,<3", markers = "python_version >= \"3.8\""}
-packaging = ">20.9"
+packaging = ">=20.9,<22.0"
 pathspec = ">=0.9,<0.11"
-pytz = ">=2015.7"
 pyyaml = ">=6.0"
 requests = "<3.0.0"
 sqlparse = ">=0.2.3,<0.5"
@@ -708,18 +707,18 @@ files = [
 
 [[package]]
 name = "dbt-postgres"
-version = "1.4.4"
+version = "1.4.1"
 description = "The postgres adapter plugin for dbt (data build tool)"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "dbt-postgres-1.4.4.tar.gz", hash = "sha256:d243cfe33a8e8cc17a806db66f1f325496b8ded427c8cfb243a2ad29b7b0c5bb"},
-    {file = "dbt_postgres-1.4.4-py3-none-any.whl", hash = "sha256:8618504a2db758111d6eb5e07349db246aeb01dbcbb64288c81b00e254cddc6a"},
+    {file = "dbt-postgres-1.4.1.tar.gz", hash = "sha256:12c8531ec30b1115ab4efbe2619557725f9a543a133847ace38ae2e5fe2b2424"},
+    {file = "dbt_postgres-1.4.1-py3-none-any.whl", hash = "sha256:fcef93c620c3b1db24f856acc6f73182291085c79265b0faab8543faf8338c59"},
 ]
 
 [package.dependencies]
-dbt-core = "1.4.4"
+dbt-core = "1.4.1"
 psycopg2-binary = ">=2.8,<3.0"
 
 [[package]]
@@ -1626,21 +1625,21 @@ files = [
 
 [[package]]
 name = "odd-dbt"
-version = "0.1.6"
+version = "0.1.7"
 description = "OpenDataDiscovery Action for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "odd_dbt-0.1.6-py3-none-any.whl", hash = "sha256:a29c8aac8b83c22a6e5e5b38bae5734afbf6f02ef122abdb6a1c2f1345e7db69"},
-    {file = "odd_dbt-0.1.6.tar.gz", hash = "sha256:71a42854f1452da67636503d0f158f8d8303b068bd6087e7a8370f56341a9a33"},
+    {file = "odd_dbt-0.1.7-py3-none-any.whl", hash = "sha256:f785a52e9cbdb768252350137780c742cecd2e7c84ad2d7290d6d019d528b194"},
+    {file = "odd_dbt-0.1.7.tar.gz", hash = "sha256:222e56aa6eda872286f68f76b59c492afeeab2cff1854cb94912c01c918ea071"},
 ]
 
 [package.dependencies]
 dbt-core = ">=1.4.1,<2.0.0"
-dbt-postgres = ">=1.4.1,<2.0.0"
-dbt-redshift = ">=1.4.0,<2.0.0"
-dbt-snowflake = ">=1.4.0,<2.0.0"
+dbt-postgres = "1.4.1"
+dbt-redshift = "1.4.0"
+dbt-snowflake = "1.4.1"
 funcy = ">=1.17,<2.0"
 loguru = ">=0.6.0,<0.7.0"
 odd-models = ">=2.0.23,<3.0.0"
@@ -1700,15 +1699,18 @@ asn1crypto = ">=1.5.1"
 
 [[package]]
 name = "packaging"
-version = "23.0"
+version = "21.3"
 description = "Core utilities for Python packages"
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.6"
 files = [
-    {file = "packaging-23.0-py3-none-any.whl", hash = "sha256:714ac14496c3e68c99c29b00845f7a2b85f3bb6f1078fd9f72fd20f0570002b2"},
-    {file = "packaging-23.0.tar.gz", hash = "sha256:b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"},
+    {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
+    {file = "packaging-21.3.tar.gz", hash = "sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"},
 ]
+
+[package.dependencies]
+pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
 
 [[package]]
 name = "parsedatetime"
@@ -2090,6 +2092,21 @@ six = ">=1.5.2"
 [package.extras]
 docs = ["sphinx", "sphinx-rtd-theme"]
 test = ["flaky", "pretend", "pytest (>=3.0.1)"]
+
+[[package]]
+name = "pyparsing"
+version = "3.0.9"
+description = "pyparsing module - Classes and methods to define and execute parsing grammars"
+category = "main"
+optional = false
+python-versions = ">=3.6.8"
+files = [
+    {file = "pyparsing-3.0.9-py3-none-any.whl", hash = "sha256:5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc"},
+    {file = "pyparsing-3.0.9.tar.gz", hash = "sha256:2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"},
+]
+
+[package.extras]
+diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
 name = "pyrsistent"
@@ -2794,4 +2811,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "48b8942fcbd28bb8ddcdc1b075f2774618e5675bae06e7b69427d93b6758b096"
+content-hash = "3199fe2e7601850a32671ac0629933afb38e652b8190561dbcca742cf8439471"
