@@ -4,6 +4,10 @@
 Command line tool for working with OpenDataDiscovery.
 It makes it easy to create token though console and ingest local dataset's metadata to OpenDataDiscovery platform.
 
+## Installation
+```bash
+pip install odd-cli
+```
 
 #### Available commands
 ```text
