@@ -20,6 +20,7 @@ It makes it easy to create token though console and ingest local dataset's metad
 ## Env variables used for commands
 
 `ODD_PLATFORM_HOST` - Location of OpenDataDiscovery Platform.
+
 `ODD_PLATFORM_TOKEN` - Collector token, can be created using [UI](https://docs.opendatadiscovery.org/configuration-and-deployment/trylocally#create-collector-entity) or `odd tokens create` command.
 
 ## Commands
