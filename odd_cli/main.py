@@ -9,7 +9,7 @@ from odd_cli.logger import logger
 from odd_cli.reader.reader import read
 from odd_cli.tokens import app as tokens_app
 
-app = typer.Typer()
+app = typer.Typer(pretty_exceptions_show_locals=False)
 app.add_typer(
     tokens_app,
     name="tokens",
