@@ -1478,14 +1478,14 @@ files = [
 
 [[package]]
 name = "odd-dbt"
-version = "0.1.9"
+version = "0.1.11"
 description = "OpenDataDiscovery Action for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "odd_dbt-0.1.9-py3-none-any.whl", hash = "sha256:d31f6d5f1e05eec5e93bc6d79ce2b83d48a535a7cd5ddde4811655ec46f738e4"},
-    {file = "odd_dbt-0.1.9.tar.gz", hash = "sha256:d4d0138135f46f0540ba3bdaf6015fbcc2566ba09fc078a31ebef49e743c940f"},
+    {file = "odd_dbt-0.1.11-py3-none-any.whl", hash = "sha256:be8179ba09611fbbd0e653e48d3055e970afb4b491971e9ceffe89c12a1bb514"},
+    {file = "odd_dbt-0.1.11.tar.gz", hash = "sha256:b025a5a05ea53de59988edac2b6cbacf1b40c3d3b126ad6275ffe59a02cec419"},
 ]
 
 [package.dependencies]
@@ -1495,7 +1495,7 @@ dbt-redshift = ">=1.4.0,<2.0.0"
 dbt-snowflake = ">=1.4.1,<2.0.0"
 funcy = ">=1.17,<2.0"
 loguru = ">=0.6.0,<0.7.0"
-odd-models = ">=2.0.23,<3.0.0"
+odd-models = ">=2.0.24,<3.0.0"
 oddrn-generator = ">=0.1.70,<0.2.0"
 psycopg2 = ">=2.9.5,<3.0.0"
 sqlalchemy = ">=1.4.46,<2.0.0"
@@ -2667,4 +2667,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "8fd536907b5ce237d630de81edd537c1c1da0429a764e4a6a6ece97af0990c24"
+content-hash = "8e59ce764e11c8512427125accd8ed2a68f92730bef6869011d93c9e58d7e5fb"
