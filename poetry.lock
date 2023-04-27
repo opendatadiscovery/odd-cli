@@ -1541,14 +1541,14 @@ files = [
 
 [[package]]
 name = "odd-dbt"
-version = "0.1.11"
+version = "0.1.12"
 description = "OpenDataDiscovery Action for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "odd_dbt-0.1.11-py3-none-any.whl", hash = "sha256:be8179ba09611fbbd0e653e48d3055e970afb4b491971e9ceffe89c12a1bb514"},
-    {file = "odd_dbt-0.1.11.tar.gz", hash = "sha256:b025a5a05ea53de59988edac2b6cbacf1b40c3d3b126ad6275ffe59a02cec419"},
+    {file = "odd_dbt-0.1.12-py3-none-any.whl", hash = "sha256:30808311b58b46c7af13f6236bf9fe4978e7267e43998dcd109419e1acd44554"},
+    {file = "odd_dbt-0.1.12.tar.gz", hash = "sha256:905b756f66dc719992246c438e23dbf76f676a72f723538daca3223281e726dc"},
 ]
 
 [package.dependencies]
@@ -1561,6 +1561,7 @@ loguru = ">=0.6.0,<0.7.0"
 odd-models = ">=2.0.24,<3.0.0"
 oddrn-generator = ">=0.1.70,<0.2.0"
 psycopg2 = ">=2.9.5,<3.0.0"
+psycopg2-binary = ">=2.9.6,<3.0.0"
 sqlalchemy = ">=1.4.46,<2.0.0"
 typer = {version = ">=0.7.0,<0.8.0", extras = ["all"]}
 
