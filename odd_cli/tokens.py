@@ -13,7 +13,8 @@ def create(
 ):
     client = Client(platform_host)
     token = client.create_token(name=name, description=description)
-    print(f"Token: {token}")
+
+    print(token)
     return token
 
 
