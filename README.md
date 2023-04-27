@@ -40,5 +40,5 @@ odd collect <path_to_folder_with_datasets>
 
 Run dbt tests and inject results to ODD platform. It uses [odd-dbt](https://github.com/opendatadiscovery/odd-dbt) package.
 ```bash
-odd dbt <path_to_dbt_project>
+odd dbt test <path_to_dbt_project>
 ```
