@@ -1610,14 +1610,14 @@ files = [
 
 [[package]]
 name = "odd-dbt"
-version = "0.1.17"
+version = "0.1.18"
 description = "OpenDataDiscovery Action for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "odd_dbt-0.1.17-py3-none-any.whl", hash = "sha256:d1862386f24f7b41972960544799747b564e36ff5faa5a6768c77e08453c952e"},
-    {file = "odd_dbt-0.1.17.tar.gz", hash = "sha256:5bb57abfcdaf0d16265ec9ae5c24c7e12973646b4b984614d53a3e2ed50cb523"},
+    {file = "odd_dbt-0.1.18-py3-none-any.whl", hash = "sha256:12528cafb6dddb7a515e8b663510224f4d53d2c2ea2c5f9a21dbb392e61f06c5"},
+    {file = "odd_dbt-0.1.18.tar.gz", hash = "sha256:51e4ae5587441aab6727d79e554e40ef78c979c99ed2ca4d176b4bb2b8bfeb8b"},
 ]
 
 [package.dependencies]
@@ -2431,6 +2431,8 @@ category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
 files = [
+    {file = "SQLAlchemy-1.4.49-cp27-cp27m-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:2e126cf98b7fd38f1e33c64484406b78e937b1a280e078ef558b95bf5b6895f6"},
+    {file = "SQLAlchemy-1.4.49-cp27-cp27mu-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:03db81b89fe7ef3857b4a00b63dedd632d6183d4ea5a31c5d8a92e000a41fc71"},
     {file = "SQLAlchemy-1.4.49-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:95b9df9afd680b7a3b13b38adf6e3a38995da5e162cc7524ef08e3be4e5ed3e1"},
     {file = "SQLAlchemy-1.4.49-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a63e43bf3f668c11bb0444ce6e809c1227b8f067ca1068898f3008a273f52b09"},
     {file = "SQLAlchemy-1.4.49-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:f835c050ebaa4e48b18403bed2c0fda986525896efd76c245bdd4db995e51a4c"},
@@ -2775,4 +2777,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "1bfab98be841602badc222a276d71019a168a100da76355fb5a279aedeb18caa"
+content-hash = "fec785bb9d9d156d0e86747f61e4fd95d3ee55a1daab6d97b8460fd92100fd41"
