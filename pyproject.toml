@@ -21,10 +21,10 @@ odd-dbt = "^0.1.22"
 
 [tool.poetry.group.dev.dependencies]
 black = {extras = ["d"], version = "^22.12.0"}
-isort = "^5.11.4"
 pytest = "^7.2.1"
 mock = "^5.0.1"
 pre-commit = "^3.1.0"
+ruff = "^0.0.278"
 
 [build-system]
 requires = ["poetry-core"]
@@ -32,6 +32,3 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 odd = "odd_cli.main:app"
-
-[tool.isort]
-profile = "black"
