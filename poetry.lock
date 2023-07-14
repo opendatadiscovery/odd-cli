@@ -1592,14 +1592,14 @@ files = [
 
 [[package]]
 name = "odd-dbt"
-version = "0.1.22"
+version = "0.1.25"
 description = "OpenDataDiscovery Action for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "odd_dbt-0.1.22-py3-none-any.whl", hash = "sha256:1c8fc2504fea0446a533dd95ac33d67cb20655a8ceb671d235b767bdb6e4960d"},
-    {file = "odd_dbt-0.1.22.tar.gz", hash = "sha256:8c70db67906adcbb6e4d60b837e8442f80867d61b5bf67f1e0f8c332f6eb7d0d"},
+    {file = "odd_dbt-0.1.25-py3-none-any.whl", hash = "sha256:fd521f1907174d13f26649184a1d48cada9ba0df1eca153dd6adf8700ba91856"},
+    {file = "odd_dbt-0.1.25.tar.gz", hash = "sha256:676ff657e9ef2e6de284a888af757bee491627c7f821e8f60b0f403918a0e96d"},
 ]
 
 [package.dependencies]
@@ -2786,4 +2786,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "4c4246cfaf1dadce05460daa696ec8679e98202f6221c1bd520c3189888ff0a8"
+content-hash = "88c1dc1b0c72e7223d68a4968834a2bdeefce26b354dabc66a427c878996b7e5"
