@@ -31,7 +31,9 @@ jobs:
           virtualenvs-create: false
 
       - name: Patch package version
-        run: poetry version ${{ inputs.bump_rule }}
+        run: |
+          poetry version ${{ inputs.bump_rule }}
+          echo "VERSION = '$(poetry version -s)'" > odd_cli/__version__.py
 
       - name: Run Dockerfile to build and publish package into PyPI
         run: |

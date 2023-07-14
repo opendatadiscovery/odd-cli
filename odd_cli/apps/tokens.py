@@ -16,7 +16,3 @@ def create(
 
     print(token)
     return token
-
-
-if __name__ == "__main__":
-    app()
