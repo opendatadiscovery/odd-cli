@@ -16,7 +16,7 @@ oddrn-generator = "^0.1.92"
 pyarrow = "^10.0.1"
 tqdm = "^4.64.1"
 loguru = "^0.6.0"
-odd-dbt = "^0.1.27"
+odd-dbt = "^0.1.28"
 
 
 [tool.poetry.group.dev.dependencies]

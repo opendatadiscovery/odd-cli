@@ -1521,20 +1521,19 @@ files = [
 
 [[package]]
 name = "odd-dbt"
-version = "0.1.27"
+version = "0.1.28"
 description = "OpenDataDiscovery Action for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "odd_dbt-0.1.27-py3-none-any.whl", hash = "sha256:f02ddbca90a297a89f098e6169176ec90d7bd228d2ea9ef19b74e677161e5f44"},
-    {file = "odd_dbt-0.1.27.tar.gz", hash = "sha256:856ee1cdf2678752218a1dd65567a2aa8067900d4ca20c4b7be841f7e38baccc"},
+    {file = "odd_dbt-0.1.28-py3-none-any.whl", hash = "sha256:e7c37c1da2fce5d1423071bb0952340902472713d00fcb6d526f26e80f1a61a2"},
+    {file = "odd_dbt-0.1.28.tar.gz", hash = "sha256:66545b56b2d5ba2d9b89c8fa45ac4fe788239c7dd24582f33060331f7b7cc211"},
 ]
 
 [package.dependencies]
-dbt-core = ">=1.4.5,<2.0.0"
-dbt-postgres = ">=1.4.5,<2.0.0"
-dbt-snowflake = ">=1.4.1,<2.0.0"
+dbt-postgres = "1.4.5"
+dbt-snowflake = "1.4.4"
 funcy = ">=2.0,<3.0"
 loguru = ">=0.6.0,<0.7.0"
 odd-models = ">=2.0.31,<3.0.0"
@@ -2716,4 +2715,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "0a66a0e1f5d94e2878f50369392eb469ebce506f68831566a45c8dec10adbe71"
+content-hash = "73f8796d16c576bf28c5d11f106ef0b79041c0b99e326d803d9faad637a0ac6b"
