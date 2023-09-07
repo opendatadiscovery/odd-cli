@@ -259,46 +259,6 @@ jupyter = ["ipython (>=7.8.0)", "tokenize-rt (>=3.2.0)"]
 uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
-name = "boto3"
-version = "1.26.165"
-description = "The AWS SDK for Python"
-category = "main"
-optional = false
-python-versions = ">= 3.7"
-files = [
-    {file = "boto3-1.26.165-py3-none-any.whl", hash = "sha256:fa85b67147c8dc99b6e7c699fc086103f958f9677db934f70659e6e6a72a818c"},
-    {file = "boto3-1.26.165.tar.gz", hash = "sha256:9e7242b9059d937f34264125fecd844cb5e01acce6be093f6c44869fdf7c6e30"},
-]
-
-[package.dependencies]
-botocore = ">=1.29.165,<1.30.0"
-jmespath = ">=0.7.1,<2.0.0"
-s3transfer = ">=0.6.0,<0.7.0"
-
-[package.extras]
-crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
-
-[[package]]
-name = "botocore"
-version = "1.29.165"
-description = "Low-level, data-driven core of boto 3."
-category = "main"
-optional = false
-python-versions = ">= 3.7"
-files = [
-    {file = "botocore-1.29.165-py3-none-any.whl", hash = "sha256:6f35d59e230095aed7cd747604fe248fa384bebb7d09549077892f936a8ca3df"},
-    {file = "botocore-1.29.165.tar.gz", hash = "sha256:988b948be685006b43c4bbd8f5c0cb93e77c66deb70561994e0c5b31b5a67210"},
-]
-
-[package.dependencies]
-jmespath = ">=0.7.1,<2.0.0"
-python-dateutil = ">=2.1,<3.0.0"
-urllib3 = ">=1.25.4,<1.27"
-
-[package.extras]
-crt = ["awscrt (==0.16.9)"]
-
-[[package]]
 name = "certifi"
 version = "2023.7.22"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -649,23 +609,6 @@ files = [
 [package.dependencies]
 dbt-core = "1.4.5"
 psycopg2-binary = ">=2.8,<3.0"
-
-[[package]]
-name = "dbt-redshift"
-version = "1.4.0"
-description = "The Redshift adapter plugin for dbt"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "dbt-redshift-1.4.0.tar.gz", hash = "sha256:8ae1842858054e82ae7d7d79fd874f6d70f21d2e483d62d8f3b9870526431b7a"},
-    {file = "dbt_redshift-1.4.0-py3-none-any.whl", hash = "sha256:f8d4545ee222b0aa54c8c57cf8c709c3be0436fa6c900908d5c7bdf78c77737c"},
-]
-
-[package.dependencies]
-boto3 = ">=1.26.26,<1.27.0"
-dbt-core = ">=1.4.0,<1.5.0"
-dbt-postgres = ">=1.4.0,<1.5.0"
 
 [[package]]
 name = "dbt-snowflake"
@@ -1101,18 +1044,6 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
-
-[[package]]
-name = "jmespath"
-version = "1.0.1"
-description = "JSON Matching Expressions"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "jmespath-1.0.1-py3-none-any.whl", hash = "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980"},
-    {file = "jmespath-1.0.1.tar.gz", hash = "sha256:90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"},
-]
 
 [[package]]
 name = "jsonschema"
@@ -1590,20 +1521,19 @@ files = [
 
 [[package]]
 name = "odd-dbt"
-version = "0.1.26"
+version = "0.1.27"
 description = "OpenDataDiscovery Action for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "odd_dbt-0.1.26-py3-none-any.whl", hash = "sha256:a5fa9ee45b08b02b3d14f3ba9f9b2c2f8ba8924afbbdaa515ea6522bdd165ec1"},
-    {file = "odd_dbt-0.1.26.tar.gz", hash = "sha256:8036cddfd234dc8355033a3db28ab1a0083d6fe36e50bb5053ede8bbd75aa283"},
+    {file = "odd_dbt-0.1.27-py3-none-any.whl", hash = "sha256:f02ddbca90a297a89f098e6169176ec90d7bd228d2ea9ef19b74e677161e5f44"},
+    {file = "odd_dbt-0.1.27.tar.gz", hash = "sha256:856ee1cdf2678752218a1dd65567a2aa8067900d4ca20c4b7be841f7e38baccc"},
 ]
 
 [package.dependencies]
 dbt-core = ">=1.4.5,<2.0.0"
-dbt-postgres = "1.4.5"
-dbt-redshift = "1.4.0"
+dbt-postgres = ">=1.4.5,<2.0.0"
 dbt-snowflake = ">=1.4.1,<2.0.0"
 funcy = ">=2.0,<3.0"
 loguru = ">=0.6.0,<0.7.0"
@@ -2279,24 +2209,6 @@ files = [
 ]
 
 [[package]]
-name = "s3transfer"
-version = "0.6.2"
-description = "An Amazon S3 Transfer Manager"
-category = "main"
-optional = false
-python-versions = ">= 3.7"
-files = [
-    {file = "s3transfer-0.6.2-py3-none-any.whl", hash = "sha256:b014be3a8a2aab98cfe1abc7229cc5a9a0cf05eb9c1f2b86b230fd8df3f78084"},
-    {file = "s3transfer-0.6.2.tar.gz", hash = "sha256:cab66d3380cca3e70939ef2255d01cd8aece6a4907a9528740f668c4b0611861"},
-]
-
-[package.dependencies]
-botocore = ">=1.12.36,<2.0a.0"
-
-[package.extras]
-crt = ["botocore[crt] (>=1.20.29,<2.0a.0)"]
-
-[[package]]
 name = "secretstorage"
 version = "3.3.3"
 description = "Python bindings to FreeDesktop.org Secret Service API"
@@ -2804,4 +2716,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "2763775d44006472dca5414b7a787c9e6e5fc420330b9272d5964455cbd5a421"
+content-hash = "0a66a0e1f5d94e2878f50369392eb469ebce506f68831566a45c8dec10adbe71"
