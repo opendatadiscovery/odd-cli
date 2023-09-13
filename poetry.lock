@@ -204,24 +204,6 @@ files = [
 ]
 
 [[package]]
-name = "betterproto"
-version = "1.2.5"
-description = "A better Protobuf / gRPC generator & library"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "betterproto-1.2.5.tar.gz", hash = "sha256:74a3ab34646054f674d236d1229ba8182dc2eae86feb249b8590ef496ce9803d"},
-]
-
-[package.dependencies]
-grpclib = "*"
-stringcase = "*"
-
-[package.extras]
-compiler = ["black", "jinja2", "protobuf"]
-
-[[package]]
 name = "black"
 version = "22.12.0"
 description = "The uncompromising code formatter."
@@ -534,39 +516,40 @@ test-randomorder = ["pytest-randomly"]
 
 [[package]]
 name = "dbt-core"
-version = "1.4.5"
+version = "1.6.2"
 description = "With dbt, data analysts and engineers can build analytics the way engineers build applications."
 category = "main"
 optional = false
-python-versions = ">=3.7.2"
+python-versions = ">=3.8"
 files = [
-    {file = "dbt-core-1.4.5.tar.gz", hash = "sha256:d32a322c192a84f41c27e8e94758c3062d2796a2e0ef32056ae5fc5d4d5c2298"},
-    {file = "dbt_core-1.4.5-py3-none-any.whl", hash = "sha256:361248e7a629d2746e18c31fa459afb607060fb8cb1e2a76706c36ce5ab9b534"},
+    {file = "dbt-core-1.6.2.tar.gz", hash = "sha256:26915958e667b46e966d4658a74f6d20b84bd905f1db787bdfc2861267a27215"},
+    {file = "dbt_core-1.6.2-py3-none-any.whl", hash = "sha256:92435746bd317b955788290baaf1c0e2729c4cc87be5878780c1f2b56219198e"},
 ]
 
 [package.dependencies]
-agate = ">=1.6,<1.7.1"
-betterproto = "1.2.5"
+agate = ">=1.7.0,<1.8.0"
 cffi = ">=1.9,<2.0.0"
-click = ">=7.0,<9"
-colorama = ">=0.3.9,<0.4.7"
+click = "<9"
+colorama = ">=0.3.9,<0.5"
 dbt-extractor = ">=0.4.1,<0.5.0"
-hologram = ">=0.0.14,<=0.0.15"
+dbt-semantic-interfaces = ">=0.2.0,<0.3.0"
+hologram = ">=0.0.16,<0.1.0"
 idna = ">=2.5,<4"
 isodate = ">=0.6,<0.7"
-Jinja2 = "3.1.2"
+Jinja2 = ">=3.1.2,<3.2.0"
 logbook = ">=1.5,<1.6"
-mashumaro = {version = "3.3.1", extras = ["msgpack"]}
-minimal-snowplow-tracker = "0.0.2"
-networkx = {version = ">=2.3,<3", markers = "python_version >= \"3.8\""}
+mashumaro = {version = ">=3.8.1,<3.9.0", extras = ["msgpack"]}
+minimal-snowplow-tracker = ">=0.0.2,<0.1.0"
+networkx = ">=2.3,<4"
 packaging = ">20.9"
-pathspec = ">=0.9,<0.11"
+pathspec = ">=0.9,<0.12"
+protobuf = ">=4.0.0"
 pytz = ">=2015.7"
 pyyaml = ">=6.0"
 requests = "<3.0.0"
 sqlparse = ">=0.2.3,<0.5"
 typing-extensions = ">=3.7.4"
-werkzeug = ">=1,<3"
+urllib3 = ">=1.0,<2.0"
 
 [[package]]
 name = "dbt-extractor"
@@ -596,34 +579,59 @@ files = [
 
 [[package]]
 name = "dbt-postgres"
-version = "1.4.5"
+version = "1.6.2"
 description = "The postgres adapter plugin for dbt (data build tool)"
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "dbt-postgres-1.4.5.tar.gz", hash = "sha256:ef78296710af13484add0f25df9af3f31d45c2ab0daa72e7064b6a481e6fde16"},
-    {file = "dbt_postgres-1.4.5-py3-none-any.whl", hash = "sha256:f7f87c194b6a625ff490fbe38f3e9258debf0c91a9e27f0a7ec8e6c085414ffe"},
+    {file = "dbt-postgres-1.6.2.tar.gz", hash = "sha256:55e8cda125639fd9807e96594fdbcb18929d46cdcb4c7dffaa1570e32c92dfd7"},
+    {file = "dbt_postgres-1.6.2-py3-none-any.whl", hash = "sha256:56afa4217419f26bf2d52f105608020055d9c3b667b50e271c910558fa873309"},
 ]
 
 [package.dependencies]
-dbt-core = "1.4.5"
+agate = "*"
+dbt-core = "1.6.2"
 psycopg2-binary = ">=2.8,<3.0"
 
 [[package]]
+name = "dbt-semantic-interfaces"
+version = "0.2.0"
+description = "The shared semantic layer definitions that dbt-core and MetricFlow use"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "dbt_semantic_interfaces-0.2.0-py3-none-any.whl", hash = "sha256:823c9bd53745604cae2af854c7d5064056383d0304560c35236a33c5f0e52090"},
+    {file = "dbt_semantic_interfaces-0.2.0.tar.gz", hash = "sha256:4afecc6dc56f85ecce7ac424dea07561513467e0bf28ead7307b78a22e6b999b"},
+]
+
+[package.dependencies]
+click = ">=7.0,<9.0"
+importlib-metadata = ">=6.0,<7.0"
+jinja2 = ">=3.0,<4.0"
+jsonschema = ">=3.0,<4.0"
+more-itertools = ">=8.0,<9.0"
+pydantic = ">=1.10,<2.0"
+python-dateutil = ">=2.0,<3.0"
+pyyaml = ">=6.0,<7.0"
+typing-extensions = ">=4.0,<5.0"
+
+[[package]]
 name = "dbt-snowflake"
-version = "1.4.4"
+version = "1.6.2"
 description = "The Snowflake adapter plugin for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "dbt-snowflake-1.4.4.tar.gz", hash = "sha256:ac6c29b66740bc0f7bfeab6700c44f4dff3c4997702fa0896ae379e131a80308"},
-    {file = "dbt_snowflake-1.4.4-py3-none-any.whl", hash = "sha256:2b2f3105728f96a405d9b3624761692665e280fc4988c84832e19b62cae271bd"},
+    {file = "dbt-snowflake-1.6.2.tar.gz", hash = "sha256:113ca513da45f478e8afad4e29dd668bcb5cb0437c3b33fcaae0b868dc1f4f47"},
+    {file = "dbt_snowflake-1.6.2-py3-none-any.whl", hash = "sha256:fa6d72974abe69bc12cd7c95139b9e1f4a4141841ca7d7f9e4be86479abb2d0a"},
 ]
 
 [package.dependencies]
-dbt-core = ">=1.4.0,<1.5.0"
+agate = "*"
+dbt-core = ">=1.6.0,<1.7.0"
 snowflake-connector-python = {version = ">=3.0,<4.0", extras = ["secure-local-storage"]}
 
 [[package]]
@@ -845,78 +853,20 @@ docs = ["Sphinx", "docutils (<0.18)"]
 test = ["objgraph", "psutil"]
 
 [[package]]
-name = "grpclib"
-version = "0.4.5"
-description = "Pure-Python gRPC implementation for asyncio"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "grpclib-0.4.5.tar.gz", hash = "sha256:bf83ed55aca59497e168761d9555056efc54a8f865316c3b39becd007e9f9a73"},
-]
-
-[package.dependencies]
-h2 = ">=3.1.0,<5"
-multidict = "*"
-
-[package.extras]
-protobuf = ["protobuf (>=3.15.0)"]
-
-[[package]]
-name = "h2"
-version = "4.1.0"
-description = "HTTP/2 State-Machine based protocol implementation"
-category = "main"
-optional = false
-python-versions = ">=3.6.1"
-files = [
-    {file = "h2-4.1.0-py3-none-any.whl", hash = "sha256:03a46bcf682256c95b5fd9e9a99c1323584c3eec6440d379b9903d709476bc6d"},
-    {file = "h2-4.1.0.tar.gz", hash = "sha256:a83aca08fbe7aacb79fec788c9c0bac936343560ed9ec18b82a13a12c28d2abb"},
-]
-
-[package.dependencies]
-hpack = ">=4.0,<5"
-hyperframe = ">=6.0,<7"
-
-[[package]]
 name = "hologram"
-version = "0.0.15"
+version = "0.0.16"
 description = "JSON schema generation from dataclasses"
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "hologram-0.0.15-py3-none-any.whl", hash = "sha256:48ca81ed47da1c604b2d3b951424b600eb8a5785b00513e3b8e3ae8101f90145"},
-    {file = "hologram-0.0.15.tar.gz", hash = "sha256:79b3d04df84d5a9d09c2e669ec5bcc50b1713ec79f4683cfdea85583b41e46f0"},
+    {file = "hologram-0.0.16-py3-none-any.whl", hash = "sha256:4e56bd525336bb64a18916f871977a4125b64be8aaa750233583003333cda361"},
+    {file = "hologram-0.0.16.tar.gz", hash = "sha256:1c2c921b4e575361623ea0e0d0aa5aee377b1a333cc6c6a879e213ed34583e55"},
 ]
 
 [package.dependencies]
-jsonschema = ">=3.0,<4.0"
+jsonschema = ">=3.0"
 python-dateutil = ">=2.8,<2.9"
-
-[[package]]
-name = "hpack"
-version = "4.0.0"
-description = "Pure-Python HPACK header compression"
-category = "main"
-optional = false
-python-versions = ">=3.6.1"
-files = [
-    {file = "hpack-4.0.0-py3-none-any.whl", hash = "sha256:84a076fad3dc9a9f8063ccb8041ef100867b1878b25ef0ee63847a5d53818a6c"},
-    {file = "hpack-4.0.0.tar.gz", hash = "sha256:fc41de0c63e687ebffde81187a948221294896f6bdc0ae2312708df339430095"},
-]
-
-[[package]]
-name = "hyperframe"
-version = "6.0.1"
-description = "HTTP/2 framing layer for Python"
-category = "main"
-optional = false
-python-versions = ">=3.6.1"
-files = [
-    {file = "hyperframe-6.0.1-py3-none-any.whl", hash = "sha256:0ec6bafd80d8ad2195c4f03aacba3a8265e57bc4cff261e802bf39970ed02a15"},
-    {file = "hyperframe-6.0.1.tar.gz", hash = "sha256:ae510046231dc8e9ecb1a6586f63d2347bf4c8905914aa84ba585ae85f28a914"},
-]
 
 [[package]]
 name = "identify"
@@ -1217,14 +1167,14 @@ files = [
 
 [[package]]
 name = "mashumaro"
-version = "3.3.1"
-description = "Fast serialization framework on top of dataclasses"
+version = "3.8.1"
+description = "Fast serialization library on top of dataclasses"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mashumaro-3.3.1-py3-none-any.whl", hash = "sha256:74ae7704e4ac8813ff701909aa8d96a405156dc2e1e3fd34ac07db7f0823a54a"},
-    {file = "mashumaro-3.3.1.tar.gz", hash = "sha256:997ed0a4ce64967b96ff65f5ca76b8e5e459a4ec7a6a0f73625a067004a801c9"},
+    {file = "mashumaro-3.8.1-py3-none-any.whl", hash = "sha256:e060469a4bec1c86f8145ea27ecd99027ea3e343075a4efcb5e8a969a45b9fb9"},
+    {file = "mashumaro-3.8.1.tar.gz", hash = "sha256:8bae8b25e2287b75094655b8ba8635f34016c09ca16498188f2f3b198d88b7ef"},
 ]
 
 [package.dependencies]
@@ -1271,14 +1221,14 @@ test = ["pytest", "pytest-cov"]
 
 [[package]]
 name = "more-itertools"
-version = "10.1.0"
+version = "8.14.0"
 description = "More routines for operating on iterables, beyond itertools"
 category = "main"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.5"
 files = [
-    {file = "more-itertools-10.1.0.tar.gz", hash = "sha256:626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"},
-    {file = "more_itertools-10.1.0-py3-none-any.whl", hash = "sha256:64e0735fcfdc6f3464ea133afe8ea4483b1c5fe3a3d69852e6503b43a0b222e6"},
+    {file = "more-itertools-8.14.0.tar.gz", hash = "sha256:c09443cd3d5438b8dafccd867a6bc1cb0894389e90cb53d227456b0b0bccb750"},
+    {file = "more_itertools-8.14.0-py3-none-any.whl", hash = "sha256:1bc4f91ee5b1b31ac7ceacc17c09befe6a40a503907baf9c839c229b5095cfd2"},
 ]
 
 [[package]]
@@ -1358,7 +1308,7 @@ files = [
 name = "multidict"
 version = "6.0.4"
 description = "multidict implementation"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1521,23 +1471,23 @@ files = [
 
 [[package]]
 name = "odd-dbt"
-version = "0.1.28"
+version = "0.2.0"
 description = "OpenDataDiscovery Action for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "odd_dbt-0.1.28-py3-none-any.whl", hash = "sha256:e7c37c1da2fce5d1423071bb0952340902472713d00fcb6d526f26e80f1a61a2"},
-    {file = "odd_dbt-0.1.28.tar.gz", hash = "sha256:66545b56b2d5ba2d9b89c8fa45ac4fe788239c7dd24582f33060331f7b7cc211"},
+    {file = "odd_dbt-0.2.0-py3-none-any.whl", hash = "sha256:83df8284f4f55b3491629312951ec424e3b5034e350451018b56d2dcbe7928d8"},
+    {file = "odd_dbt-0.2.0.tar.gz", hash = "sha256:a787a51e1fb8de83e64d3ea6cf3d6510ad35a4a9b0c0ca1a0540d7cb7642223a"},
 ]
 
 [package.dependencies]
-dbt-postgres = "1.4.5"
-dbt-snowflake = "1.4.4"
+dbt-postgres = ">=1.6.2,<2.0.0"
+dbt-snowflake = ">=1.6.2,<2.0.0"
 funcy = ">=2.0,<3.0"
 loguru = ">=0.6.0,<0.7.0"
 odd-models = ">=2.0.31,<3.0.0"
-oddrn-generator = ">=0.1.92,<0.2.0"
+oddrn-generator = ">=0.1.93,<0.2.0"
 psycopg2-binary = ">=2.9.6,<3.0.0"
 sqlalchemy = ">=1.4.46,<2.0.0"
 typer = {version = ">=0.7.0,<0.8.0", extras = ["all"]}
@@ -1565,14 +1515,14 @@ sqlparse = "0.4.2"
 
 [[package]]
 name = "oddrn-generator"
-version = "0.1.92"
+version = "0.1.93"
 description = "Open Data Discovery Resource Name Generator"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "oddrn_generator-0.1.92-py3-none-any.whl", hash = "sha256:a14c4de404397f185bc7554e5a222b164c5b8518fe95cae02a4ba7a8ecaeb33d"},
-    {file = "oddrn_generator-0.1.92.tar.gz", hash = "sha256:aefbd07e7f383e02603093c027001acbeaf2f0b1ee6d96f1cd1a268b6fb597a8"},
+    {file = "oddrn_generator-0.1.93-py3-none-any.whl", hash = "sha256:1eb9ea2481fef775ffe858a3d07e33769ac5c12c09e55857b5dec9dbc4b0634d"},
+    {file = "oddrn_generator-0.1.93.tar.gz", hash = "sha256:c923970ac52e69862132de0a1b1717348bb7cafe9350ae53a6c3bb860ef7a4d4"},
 ]
 
 [package.dependencies]
@@ -1682,6 +1632,29 @@ identify = ">=1.0.0"
 nodeenv = ">=0.11.1"
 pyyaml = ">=5.1"
 virtualenv = ">=20.10.0"
+
+[[package]]
+name = "protobuf"
+version = "4.24.3"
+description = ""
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "protobuf-4.24.3-cp310-abi3-win32.whl", hash = "sha256:20651f11b6adc70c0f29efbe8f4a94a74caf61b6200472a9aea6e19898f9fcf4"},
+    {file = "protobuf-4.24.3-cp310-abi3-win_amd64.whl", hash = "sha256:3d42e9e4796a811478c783ef63dc85b5a104b44aaaca85d4864d5b886e4b05e3"},
+    {file = "protobuf-4.24.3-cp37-abi3-macosx_10_9_universal2.whl", hash = "sha256:6e514e8af0045be2b56e56ae1bb14f43ce7ffa0f68b1c793670ccbe2c4fc7d2b"},
+    {file = "protobuf-4.24.3-cp37-abi3-manylinux2014_aarch64.whl", hash = "sha256:ba53c2f04798a326774f0e53b9c759eaef4f6a568ea7072ec6629851c8435959"},
+    {file = "protobuf-4.24.3-cp37-abi3-manylinux2014_x86_64.whl", hash = "sha256:f6ccbcf027761a2978c1406070c3788f6de4a4b2cc20800cc03d52df716ad675"},
+    {file = "protobuf-4.24.3-cp37-cp37m-win32.whl", hash = "sha256:1b182c7181a2891e8f7f3a1b5242e4ec54d1f42582485a896e4de81aa17540c2"},
+    {file = "protobuf-4.24.3-cp37-cp37m-win_amd64.whl", hash = "sha256:b0271a701e6782880d65a308ba42bc43874dabd1a0a0f41f72d2dac3b57f8e76"},
+    {file = "protobuf-4.24.3-cp38-cp38-win32.whl", hash = "sha256:e29d79c913f17a60cf17c626f1041e5288e9885c8579832580209de8b75f2a52"},
+    {file = "protobuf-4.24.3-cp38-cp38-win_amd64.whl", hash = "sha256:067f750169bc644da2e1ef18c785e85071b7c296f14ac53e0900e605da588719"},
+    {file = "protobuf-4.24.3-cp39-cp39-win32.whl", hash = "sha256:2da777d34b4f4f7613cdf85c70eb9a90b1fbef9d36ae4a0ccfe014b0b07906f1"},
+    {file = "protobuf-4.24.3-cp39-cp39-win_amd64.whl", hash = "sha256:f631bb982c5478e0c1c70eab383af74a84be66945ebf5dd6b06fc90079668d0b"},
+    {file = "protobuf-4.24.3-py3-none-any.whl", hash = "sha256:f6f8dc65625dadaad0c8545319c2e2f0424fede988368893ca3844261342c11a"},
+    {file = "protobuf-4.24.3.tar.gz", hash = "sha256:12e9ad2ec079b833176d2921be2cb24281fa591f0b119b208b788adc48c2561d"},
+]
 
 [[package]]
 name = "psycopg2-binary"
@@ -2434,17 +2407,6 @@ files = [
 ]
 
 [[package]]
-name = "stringcase"
-version = "1.2.0"
-description = "String case converter."
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "stringcase-1.2.0.tar.gz", hash = "sha256:48a06980661908efe8d9d34eab2b6c13aefa2163b3ced26972902e3bdfd87008"},
-]
-
-[[package]]
 name = "text-unidecode"
 version = "1.3"
 description = "The most basic Text::Unidecode port"
@@ -2576,24 +2538,6 @@ docs = ["furo (>=2023.5.20)", "proselint (>=0.13)", "sphinx (>=7.0.1)", "sphinx-
 test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7)", "packaging (>=23.1)", "pytest (>=7.3.1)", "pytest-env (>=0.8.1)", "pytest-freezer (>=0.4.6)", "pytest-mock (>=3.10)", "pytest-randomly (>=3.12)", "pytest-timeout (>=2.1)", "setuptools (>=67.8)", "time-machine (>=2.9)"]
 
 [[package]]
-name = "werkzeug"
-version = "2.3.7"
-description = "The comprehensive WSGI web application library."
-category = "main"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "werkzeug-2.3.7-py3-none-any.whl", hash = "sha256:effc12dba7f3bd72e605ce49807bbe692bd729c3bb122a3b91747a6ae77df528"},
-    {file = "werkzeug-2.3.7.tar.gz", hash = "sha256:2b8c0e447b4b9dbcc85dd97b6eeb4dcbaf6c8b6c3be0bd654e25553e0a2157d8"},
-]
-
-[package.dependencies]
-MarkupSafe = ">=2.1.1"
-
-[package.extras]
-watchdog = ["watchdog (>=2.3)"]
-
-[[package]]
 name = "win32-setctime"
 version = "1.1.0"
 description = "A small Python utility to set file creation time on Windows"
@@ -2715,4 +2659,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "73f8796d16c576bf28c5d11f106ef0b79041c0b99e326d803d9faad637a0ac6b"
+content-hash = "e2d68e8b17a91b42671c1888e18295d3df05cfae6a076bf606c3470989920733"
