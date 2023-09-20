@@ -1481,14 +1481,14 @@ files = [
 
 [[package]]
 name = "odd-dbt"
-version = "0.2.5"
+version = "0.2.6"
 description = "OpenDataDiscovery Action for dbt"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "odd_dbt-0.2.5-py3-none-any.whl", hash = "sha256:db8439452c8fd57b041ed34610e67bb4ffc9b72ad397719923cd308810f49628"},
-    {file = "odd_dbt-0.2.5.tar.gz", hash = "sha256:c8ad8eac0b0f6c14f224fa2a93ab128186818de0eb47d620d13910969ef78ea1"},
+    {file = "odd_dbt-0.2.6-py3-none-any.whl", hash = "sha256:2a59ff29f962763a5d3c0aa55b46865e2973c46ecfae25278b0b1e2c1c1f56c5"},
+    {file = "odd_dbt-0.2.6.tar.gz", hash = "sha256:9c86910a15d561be45b1746081136e2b5e6b3d78e8759d231edf240a18f64ffe"},
 ]
 
 [package.dependencies]
@@ -1497,7 +1497,7 @@ dbt-snowflake = ">=1.6.2,<2.0.0"
 funcy = ">=2.0,<3.0"
 loguru = ">=0.6.0,<0.7.0"
 odd-models = ">=2.0.31,<3.0.0"
-oddrn-generator = ">=0.1.94,<0.2.0"
+oddrn-generator = ">=0.1.95,<0.2.0"
 psycopg2-binary = ">=2.9.6,<3.0.0"
 sqlalchemy = ">=1.4.46,<2.0.0"
 typer = {version = ">=0.7.0,<0.8.0", extras = ["all"]}
@@ -1525,14 +1525,14 @@ sqlparse = "0.4.2"
 
 [[package]]
 name = "oddrn-generator"
-version = "0.1.94"
+version = "0.1.95"
 description = "Open Data Discovery Resource Name Generator"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "oddrn_generator-0.1.94-py3-none-any.whl", hash = "sha256:50e386e1d5524cf1c29cf30b76daf88210c6a5f163fc437777d5a4b8a3a8d45e"},
-    {file = "oddrn_generator-0.1.94.tar.gz", hash = "sha256:c1e1bd9102f6725dde7f94152fc39a1c42e75bdde11467b55263dfd827b2875b"},
+    {file = "oddrn_generator-0.1.95-py3-none-any.whl", hash = "sha256:442742c746dcbedf71b6124d3e23d2e97ca532f202865f822b0d455f2164f6dc"},
+    {file = "oddrn_generator-0.1.95.tar.gz", hash = "sha256:ca984fd0d3295cd2a0008a03c76fbc885c2aec02de6f956a37418de76d8c732d"},
 ]
 
 [package.dependencies]
@@ -2669,4 +2669,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "9e5eca6c14e74bac5059ffa912e555cb38a52c6cf9ec1f3c495f375b75399ef6"
+content-hash = "5b982fc3d01308985cc490835257a2d3492eadc2ecb2b50d7f9eedda22be95c8"
