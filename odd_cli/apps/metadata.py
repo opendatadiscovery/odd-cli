@@ -1,3 +1,4 @@
+import traceback
 from pathlib import Path
 
 import typer
@@ -12,6 +13,7 @@ app = typer.Typer(
     pretty_exceptions_show_locals=False,
 )
 
+
 @app.callback()
 def collect(
     folder: Path = typer.Argument(..., exists=True, resolve_path=True),
@@ -24,14 +26,18 @@ def collect(
     client = Client(host=platform_host, token=platform_token)
 
     generator = FilesystemGenerator(host_settings="local")
+    try:
+        client.create_data_source(
+            data_source_oddrn=generator.get_data_source_oddrn(),
+            data_source_name="local_files",
+        )
 
-    client.create_data_source(
-        data_source_oddrn=generator.get_data_source_oddrn(),
-        data_source_name="local_files",
-    )
+        data_entities = read(path=folder, generator=generator)
 
-    data_entities = read(path=folder, generator=generator)
+        client.ingest_data_entity_list(data_entities=data_entities)
 
-    client.ingest_data_entity_list(data_entities=data_entities)
-
-    logger.success(f"Ingested {len(data_entities.items)} datasets")
+        logger.success(f"Ingested {len(data_entities.items)} datasets")
+    except Exception as e:
+        logger.debug(traceback.format_exc())
+        logger.error(e)
+        raise typer.Exit(code=1)

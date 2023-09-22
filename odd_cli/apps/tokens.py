@@ -1,7 +1,9 @@
+import traceback
+
 import typer
 
 from odd_cli.client import Client
-
+from ..logger import logger
 app = typer.Typer(short_help="Manipulate OpenDataDiscovery platform's tokens")
 
 
@@ -12,7 +14,11 @@ def create(
     platform_host: str = typer.Option(..., "--host", "-h", envvar="ODD_PLATFORM_HOST"),
 ):
     client = Client(platform_host)
-    token = client.create_token(name=name, description=description)
-
-    print(token)
-    return token
+    try:
+        token = client.create_token(name=name, description=description)
+        print(token)
+        return token
+    except Exception as e:
+        logger.debug(traceback.format_exc())
+        logger.error(e)
+        raise typer.Exit(code=1)
