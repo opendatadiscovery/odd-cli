@@ -10,7 +10,7 @@ from odd_cli.main import app
 runner = CliRunner()
 
 
-@mock.patch("odd_cli.main.Client")
+@mock.patch("odd_cli.client.Client")
 class CollectCommandTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.folder_path = str(Path(__file__).parent / "data")
