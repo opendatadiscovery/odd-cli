@@ -27,3 +27,7 @@ def version(
         print(VERSION)
     else:
         print(f"odd-cli version: {VERSION}")
+
+
+if __name__ == "__main__":
+    app()

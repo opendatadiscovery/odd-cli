@@ -1,7 +1,7 @@
-from loguru import logger
 from odd_models.models import DataEntity, DataEntityType, DataSet
 from oddrn_generator.generators import FilesystemGenerator
 
+from odd_cli.logger import logger
 from odd_cli.reader.mapper.field import map_field
 from odd_cli.reader.models.table import Table
 
